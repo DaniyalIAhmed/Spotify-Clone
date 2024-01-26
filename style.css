@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Chelsea+Market&family=Kanit&family=Roboto&family=Rum+Raisin&family=Ubuntu&family=Ysabeau+Infant&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'roboto';
+    font-weight: 700;
+}
+body{
+    background-color: black;
+    color: white;
+    position: relative;
+}
+.left{
+    user-select: none;
+    width: 25vw;
+    padding: 5px;
+    position: relative;
+}
+.right{
+    width: 75vw;
+}
+.home ul li{
+    display: flex;
+    gap: 20px;
+    width: 23px;
+    list-style: none;
+    padding-top: 20px;
+    cursor: pointer;
+}
+.library{
+    min-height: 79.8vh;
+}
+.library ul li{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    list-style: none;
+    user-select: none;
+}
+.library>ul>li>img{
+    width: 20px;
+}
+.songList{
+    background-color: #222222;
+    min-height: 500px;
+    box-sizing: border-box;
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin: 20px 0px;
+}
+.songList ul li{
+    position: relative;
+    margin: 10px 0;
+    background-color: #101010;
+    height: 70px;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 2px solid grey;
+}
+.songList ul li:hover{
+    background-color: #1d1d1d;
+}
+.songList ul li:active{
+    background-color: #252525;
+}
+.header{
+    margin: 15px 10px 0 0;
+    display: flex;
+    align-items: center;
+    height: 75px;
+    padding: 0 20px;
+    background-color: #101010;
+    justify-content: space-between;
+}
+.grt{
+    cursor: pointer;
+    background-color: black;
+    border-radius: 100%;
+    /* fill: #fff; */
+    margin-left: 5px;
+    height: 30px;
+    width: 30px;
+}
+.hamburger{
+    display: none;
+    cursor: pointer;
+    fill: #fff;
+    border-radius: 100%;
+    margin-left: 5px;
+    height: 30px;
+    width: 30px;
+}
+.sbtn{
+   background-color: #101010;
+   color: #a2a2a2;
+   font-size: 1.2rem;
+   outline: none;
+   cursor: pointer;
+   border: none;
+   font-weight: 500;
+   margin: 0 20px;
+   height: 30px;
+}
+.sbtn:hover{
+   color: white;
+   font-weight: 1000;
+}
+.lbtn{
+    background-color: #ffffff;
+    color: #101010;
+    font-size: 1.2rem;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    margin: 0 20px;
+    height: 55px;
+    width: 120px;
+    border-radius: 40px;
+}
+.lbtn:hover{
+    background-color: #cacaca;
+    transform: scale(1.05);
+}
+
+.playlist{
+    background-color: #1d1d1d;
+    color: white;
+    margin: 0 10px 0 0;
+    padding: 10px;
+    min-height: 750px;
+    position: relative;
+}
+.playlist>h1{
+    font-size: 1.4rem;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+.cardcont{
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 55vh;
+    overflow-y: scroll;
+    background-color: #101010;
+    border-radius: 5px;
+}
+.card{
+    position: relative;
+    width: 200px;
+    padding: 22px;
+    box-sizing: border-box;
+    background-color: #101010;
+    margin: 0 12px;
+    margin-top: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.play{
+    position: absolute;
+    right: 25px;
+    bottom: 100px;
+    opacity: 0;
+    transition: opacity 0.3s, bottom 0.3s;
+}
+.play:hover{
+    transform: scale(1.06);
+}
+.play>svg{
+    padding: 12px;
+    object-fit: cover;
+    border-radius: 30px;
+    background-color: #1ed760;
+    width: 30px;
+    height: 30px;
+}
+.card:hover{
+    background-color: #1d1d1d;
+}
+.card:hover .play{
+    bottom: 110px;
+    opacity: 1;
+}
+.card:active{
+    background-color: #252525;
+}
+.card img{
+    width: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    user-select: none;
+}
+.card h2{
+    font-size: 1rem;
+    margin: 5px;
+    user-select: none;
+}
+.card p{
+    font-size: 0.8rem;
+    margin: 5px;
+    font-weight: 100;
+    color: grey;
+    user-select: none;
+}
+.player{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    
+    padding: 20px;
+    height: 150px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.playbar{
+    background-color: #101010;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.playbarControls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pbtns>img{
+    cursor: pointer;
+    filter: invert(1);
+    height: 40px;
+    width: 40px;
+    transition: all .3s;
+}
+.pbtns{
+    user-select: none;
+    cursor: default;
+}
+.pbtns>img:hover{
+    transform: scale(1.3);
+}
+.pbtns>img:active{
+    transform: scale(1.2);
+}
+.c1{
+    display: flex;
+    align-items: center;
+    width: 470px;
+}
+.c2{
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+    
+}
+.c1>img{
+    margin: 0 10px 0 0 ;
+}
+.seekbar{
+    height: 5px;
+    width: 100%;
+    background-color: #1ed760;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.circle{
+    position: absolute;
+    top: -6px;
+    left: -2px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: left 0.5s;
+}
+.sInfo{
+    width: 120px;
+}
+.x{
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    display: none;
+    width: 30px;
+    height: 30px;
+}
+
+/* mediaqueries */
+@media (max-width: 1350px) {
+    .left{
+        position: absolute;
+        left: -130%;
+        transition: all .5s;
+        z-index: 1;
+        width: 400px;
+    }
+    .right{
+        width: 100%;
+    }
+    .playlist {
+        margin: 0 10px 0 10px;
+    }
+    .header {
+        margin: 15px 10px 0 10px;
+    }
+    .hamburger{
+        display: inline;
+    }
+    .x{
+        display: block;
+    }
+}
+@media (max-width: 450px) {
+    .lbtn{
+        width: 90px;
+        margin: 0 10px;
+    }
+    .sbtn{
+        margin: 0 10px;
+    }
+    .header{
+        padding: 0 10px;
+    }
+    .grt{
+        display: none;
+    }
+    .sinfo{
+        width: 100px;
+    }
+    .left{
+        width: 330px;
+    }
+}
